@@ -1,4 +1,3 @@
-
 local plugins = {
     {
         "vim-crystal/vim-crystal",
@@ -43,10 +42,10 @@ local plugins = {
         ft = {"python"},
         opts = function()
         end,
-    },
+    }, 
 
     {
-        "folke/trouble.nvim",
+        "folke/trouble.nvim", 
         opts = {}, -- for default options, refer to the configuration section for custom setup.
         cmd = "Trouble",
         keys = {
@@ -74,7 +73,7 @@ local plugins = {
                 "<leader>xL",
                 "<cmd>Trouble loclist toggle<cr>",
                 desc = "Location List (Trouble)",
-            },
+            }, 
             {
                 "<leader>xQ",
                 "<cmd>Trouble qflist toggle<cr>",
@@ -111,7 +110,7 @@ local plugins = {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { 
+                ensure_installed = {
                     "lua_ls", 
                     "tsserver", 
                     "clangd", 
@@ -229,7 +228,7 @@ local plugins = {
             { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
             { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
         },
-        build = "make tiktoken", -- Only on MacOS or Linux
+        build = "make tiktoken", -- OnVirticle split vsp ly on MacOS or Linux
         opts = {
             -- See Configuration section for options
         },
@@ -262,22 +261,25 @@ local plugins = {
     {
         "folke/noice.nvim",
         event = "VeryLazy",
+        -- opts = {
+        --     -- add any options here
+        --     routes = {
+        --         {
+        --             filter = {
+        --                 event = "notify",
+        --                 find = "No information available"
+        --             },
+        --             opts = {
+        --                 skip = true
+        --             },
+        --         },
+        --     },
+        --     presets = {
+        --         lsp_doc_border = true,
+        --     },
+        -- },
         opts = {
-            -- add any options here
-            routes = {
-                {
-                    filter = {
-                        event = "notify",
-                        find = "No information available"
-                    },
-                    opts = {
-                        skip = true
-                    },
-                },
-            },
-            presets = {
-                lsp_doc_border = true,
-            },
+
         },
 
         dependencies = {
@@ -288,9 +290,10 @@ local plugins = {
             --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
         },
-        --config = function()
-        --    require "custom.configs.noice"
-        --end,
+        
+        config = function()
+            require "custom.configs.noice"
+        end,
     },
 
     {
@@ -385,6 +388,30 @@ local plugins = {
             vim.g.db_ui_use_nerd_fonts = 1
         end,
     },
+
+    {
+        "tpope/vim-fugitive",
+        event="VeryLazy",
+    },
+
+    -- nvim clipboards
+    -- {
+    --     'ojroques/nvim-osc52',
+    --     init = function()
+    --         require('osc52').setup {
+    --             max_length = 0,           -- Maximum length of selection (0 for no limit)
+    --             silent = false,           -- Disable message on successful copy
+    --             trim = false,             -- Trim surrounding whitespaces before copy
+    --             tmux_passthrough = false, -- Use tmux passthrough (requires tmux: set -g allow-passthrough on)
+    --         }
+    --
+    --         -- Keybinding
+    --         vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
+    --         vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+    --         vim.keymap.set('v', '<leader>c', require('osc52').copy_visual)
+    --
+    --     end,
+    -- },
 
 
 

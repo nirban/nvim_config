@@ -3,6 +3,9 @@
 # chteat sheet
 
 <Space> + c + h
-vsp 
+Virticle split vsp 
+Virticle split vsp 
+Virticle split vsp 
+ :'>,'> !tee >(xsel -b)
 
 sp
